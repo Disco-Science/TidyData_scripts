@@ -39,12 +39,6 @@ Create a template for labels
 """
 for index in TrackingSheet.index:   
     
-    
-    # print(TrackingSheet["Batch Number"][index], 
-    #       TrackingSheet["Quarter"][index], 
-    #       TrackingSheet["Target"][index], 
-    #       TrackingSheet["Format"][index])
-    
     target = str(TrackingSheet["Target"][index]).strip()
     clone = str(TrackingSheet["Clone"][index]).strip()
     col1 = target[0:8] + " " + clone[0:4]
@@ -61,12 +55,6 @@ Apply template to make labels implementing timepoints
 """
     
 for index in labelTemplate.index:
-    
-    # print(labelTemplate["1"][index], 
-    #       labelTemplate["2"][index],
-    #       labelTemplate["3"][index],
-    #       labelTemplate["4"][index],
-    #       labelTemplate["5"][index])
     
     tempDF = pd.DataFrame(columns = ["1", "2", "3", "4", "5", "6"])
     
@@ -87,8 +75,6 @@ for index in labelTemplate.index:
         
     else:
         
-        # print("FALSE")
-        
         for i in range(8):
             
             tempDF.loc[i] = [labelTemplate["1"][index],
@@ -107,8 +93,6 @@ for index in labelTemplate.index:
     tempDF = pd.DataFrame(columns = ["1", "2", "3", "4", "5", "6"])
         
     continue
-
-# labelsDF.to_csv("labelsDF.csv")
 
 """
 
@@ -140,32 +124,6 @@ Making headers for file
     
 #     colCells = sheet.cell(row = 1, column = value)
 #     colCells.value = value
-
-"""
-
-Code for matching Excel cells to copy over DF 
-
-"""
-
-# for columnNum in range(0,6):
-    
-#     for i in range(0, 20):
-        
-#         # print(letter, i, sep="")
-#         # i = str(i)
-#         # cell = "{}{}".format(letter,i)
-#         # print(cell)
-#         # sheet[cell] = "nathan"
-        
-#         print(i,columnNum)
-#         print(labelsDF.iloc[ (i), (columnNum) ])
-        
-        
-#         mycell = sheet.cell(row = i+1, column = columnNum+1)
-#         mycell.value = "To do still"
-        
-
-# workbook.save(filename=fileName)
 
 
 """
