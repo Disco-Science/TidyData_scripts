@@ -28,10 +28,7 @@ BV421DF = readxl::read_excel("~/Code/Projects/Databases/BV421 database.xlsx",
                            col_types = "text",
                            col_names = TRUE)
 
- 
-
 ##### make dictionaries
-
 
 stabilityDict = list()
 
